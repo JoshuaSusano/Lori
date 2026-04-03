@@ -22,12 +22,12 @@ body {
   background: url('daisy.jpg') center/cover no-repeat;
 }
 
-/* RESPONSIVE PLAYER */
+/* PLAYER */
 .player {
   width: 90%;
   max-width: 360px;
-  aspect-ratio: 9 / 16; /* 📱 phone ratio */
-  
+  aspect-ratio: 9 / 16;
+
   background: rgba(18, 18, 18, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 30px;
@@ -47,17 +47,17 @@ body {
   border-radius: 20px;
 }
 
-/* MAKE VIDEO SQUARE LIKE SPOTIFY */
+/* ✅ FIXED VIDEO SIZE */
 video {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 180px; /* 🔥 key fix */
   object-fit: cover;
   border-radius: 15px;
 }
 
 /* INFO */
 .info {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .title {
@@ -72,11 +72,12 @@ video {
 
 /* PROGRESS */
 .progress-container {
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .progress {
   width: 100%;
+  cursor: pointer;
 }
 
 /* CONTROLS */
@@ -121,6 +122,10 @@ video {
   .player {
     aspect-ratio: auto;
     height: 90vh;
+  }
+
+  video {
+    height: 150px;
   }
 }
 </style>
