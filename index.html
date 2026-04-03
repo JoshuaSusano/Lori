@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Morning Surprise</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #8b0000; /* dark red background similar to your first image */
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://i.imgur.com/4cNwGox.png'); /* optional: use kiss background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .player-container {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .player-container video {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffe4e1;
+    }
+
+    .controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .controls button {
+      background: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .controls button:hover {
+      background: #ff9999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player-container">
+    <video id="loriVideo" src="lori.mp4" autoplay muted loop></video>
+    
+    <div class="controls">
+      <button id="playPause">Pause</button>
+    </div>
+
+    <div class="note">
+      Good morning hon! I created and hosted a website for you 💖
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('loriVideo');
+    const btn = document.getElementById('playPause');
+
+    btn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        btn.textContent = 'Pause';
+      } else {
+        video.pause();
+        btn.textContent = 'Play';
+      }
+    });
+  </script>
+</body>
+</html>
